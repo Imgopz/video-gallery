@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Video Grid Site</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #f3f3f3;
+        }
+        
+        main {
+            display: grid;
+            grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+            grid-gap: 40px;
+            padding: 60px 0;
+        }
+
+        .text--medium {
+            font-family: 'Open Sḍans', sans-serif;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 400;
+            color: rgb(255, 255, 255);
+        }
+
+        .cards {
+            grid-column: 2 / span 12;
+            display: grid;
+            grid-template-columns: repeat(12, minmax(auto, 60px));
+            grid-gap: 40px;
+        }
+
+        .card {
+            grid-column-end: span 4;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(255, 175, 101);
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+        }
+
+        .card:hover{
+            transform: translateY(-7px);
+        }
+
+        .card__image-container {
+            width: 100%;
+            padding-top: 56.25%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card__image-container img {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card__content {
+            padding: 20px;
+        }
+
+        .card__title {
+            margin-bottom: 20px;
+        }
+
+        .card__info {
+            display: flex;
+            align-self: end;
+            align-items: center;
+        }
+
+        .card__price {
+            margin-left: auto;
+            padding: 5px 20px;
+            background-color: rgb(255, 150, 52);
+            border-radius: 20px;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .card {
+                grid-column-end: span 6;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+
+            main {
+                grid-gap: 20px;
+            }
+
+            .card {
+                grid-column-end: span 12;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            main {
+                grid-template-columns: 10px repeat(6, 1fr) 10px;
+                grid-gap: 10px;
+            }
+
+            .cards {
+                grid-column: 2 / span 6;
+                grid-template-columns: repeat(6, 1fr);
+                grid-gap: 20px;
+            }
+
+            .card {
+                grid-column-end: span 6;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="cards">
+            <div class="card">
+                <div class="card__image-container">
+                    <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="card__title text--medium">
+                        Here's the title of an Awesome course
+                    </p>
+                    <div class="card__info">
+                        <p class="text--medium">30 min</p>
+                        <p class="card__price text--medium">Free</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image-container">
+                    <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="card__title text--medium">
+                        Here's the title of an Awesome course
+                    </p>
+                    <div class="card__info">
+                        <p class="text--medium">30 min</p>
+                        <p class="card__price text--medium">Free</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image-container">
+                    <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="card__title text--medium">
+                        Here's the title of an Awesome course
+                    </p>
+                    <div class="card__info">
+                        <p class="text--medium">30 min</p>
+                        <p class="card__price text--medium">Free</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image-container">
+                    <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="card__title text--medium">
+                        Here's the title of an Awesome course
+                    </p>
+                    <div class="card__info">
+                        <p class="text--medium">30 min</p>
+                        <p class="card__price text--medium">Free</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image-container">
+                    <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="card__title text--medium">
+                        Here's the title of an Awesome course
+                    </p>
+                    <div class="card__info">
+                        <p class="text--medium">30 min</p>
+                        <p class="card__price text--medium">Free</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image-container">
+                    <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="card__title text--medium">
+                        Here's the title of an Awesome course
+                    </p>
+                    <div class="card__info">
+                        <p class="text--medium">30 min</p>
+                        <p class="card__price text--medium">Free</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image-container">
+                    <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="card__title text--medium">
+                        Here's the title of an Awesome course
+                    </p>
+                    <div class="card__info">
+                        <p class="text--medium">30 min</p>
+                        <p class="card__price text--medium">Free</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image-container">
+                    <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="card__title text--medium">
+                        Here's the title of an Awesome course
+                    </p>
+                    <div class="card__info">
+                        <p class="text--medium">30 min</p>
+                        <p class="card__price text--medium">Free</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image-container">
+                    <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="card__title text--medium">
+                        Here's the title of an Awesome course
+                    </p>
+                    <div class="card__info">
+                        <p class="text--medium">30 min</p>
+                        <p class="card__price text--medium">Free</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
